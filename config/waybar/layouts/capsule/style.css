@@ -1,0 +1,101 @@
+@import "~/.config/waybar/colors.css";
+
+/* Reset and Base Styles */
+* {
+    border: none;
+    border-radius: 0;
+    font-family: "Nunito", "JetBrainsMono Nerd Font", "Noto Sans CJK JP", "Noto Sans CJK KR", sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    min-height: 0;
+    padding: 0;
+    margin: 0;
+}
+
+window#waybar {
+    background: transparent;
+}
+
+/* Main Container */
+.modules-center {
+    background: @surface_container;
+    padding: 6px 14px;
+    border-radius: 30px;
+}
+
+/* Individual Modules Padding & Icon Sizing */
+#clock,
+#pulseaudio,
+#network,
+#battery,
+#custom-media {
+    padding: 0 8px;
+}
+
+#pulseaudio,
+#battery {
+    font-size: 17px;
+    /* Kept slightly larger for visual balance */
+}
+
+/* Module Specific Customizations */
+#clock {
+    color: @on_surface;
+    font-size: 15px;
+    font-weight: 700;
+}
+
+#custom-media {
+    color: @tertiary;
+    font-weight: bold;
+    font-size: 14px;
+    margin: 0 0 0 7px;
+}
+
+#pulseaudio {
+    color: @primary;
+}
+
+#network {
+    color: @on_surface_variant;
+    font-size: 14px;
+    /* Tamed the wifi icon size down to match standard text height */
+}
+
+#battery {
+    color: @secondary;
+}
+
+/* Workspaces Module */
+#workspaces {
+    background: transparent;
+    padding: 0;
+    margin: 0 4px;
+}
+
+#workspaces button {
+    color: @on_surface_variant;
+    background: transparent;
+    padding: 0 10px;
+    margin: 0 2px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+#workspaces button.active {
+    background: linear-gradient(135deg, @primary 0%, @tertiary 50%, @secondary 100%);
+    color: @on_primary;
+    min-width: 32px;
+    border-radius: 20px;
+}
+
+#workspaces button:hover {
+    background: @surface_container_highest;
+    color: @on_surface;
+}
+
+#workspaces button.urgent {
+    background: @error;
+    color: @on_error;
+}

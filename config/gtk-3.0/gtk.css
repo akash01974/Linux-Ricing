@@ -1,0 +1,115 @@
+@import 'colors.css';
+
+#main-wrapper {
+    background-color: @window_bg_color !important;
+    border-radius: 10px !important;
+}
+
+#main-wrapper entry {
+    background-color: @headerbar_bg_color !important;
+    color: @window_fg_color !important;
+    border-radius: 8px !important;
+    border: 1px solid @headerbar_border_color !important;
+    padding: 10px 14px !important;
+    font-family: "JetBrainsMono Nerd Font";
+    font-size: 11pt;
+}
+
+#main-wrapper entry selection {
+    background-color: @selected_bg_color;
+    color: @selected_fg_color;
+}
+
+#preview-window {
+    padding: 0 6px 0 6px;
+    background-color: @card_bg_color !important;
+    border-radius: 8px;
+}
+
+#preview-window label {
+    color: @card_fg_color !important;
+}
+
+#del-btn {
+    background: none;
+    border: none;
+    margin: 0;
+    padding: 4px;
+    min-width: 24px;
+    min-height: 24px;
+}
+
+#del-btn:hover {
+    background-color: @button_hover_bg_color !important;
+    border-radius: 6px;
+}
+
+#warning {
+    border: 1px solid @accent_bg_color !important;
+    padding: 24px;
+    margin: 6px;
+    border-radius: 8px;
+    background-color: @card_bg_color !important;
+}
+
+#warning label {
+    color: @card_fg_color !important;
+}
+
+flowboxchild {
+    border-radius: 8px;
+    padding: 4px 0;
+}
+
+flowboxchild label {
+    color: @window_fg_color !important;
+    font-family: "JetBrainsMono Nerd Font";
+    font-size: 11pt;
+    padding: 4px 6px;
+}
+
+flowboxchild:hover,
+flowboxchild:selected {
+    background-color: @button_hover_bg_color !important;
+    border-radius: 8px;
+}
+
+frame {
+    border: none;
+    border-radius: 8px;
+}
+
+frame > GtkLabel {
+    color: @accent_bg_color !important;
+    font-family: "JetBrainsMono Nerd Font";
+    font-size: 11pt;
+}
+
+#main-wrapper button {
+    background-color: @card_bg_color !important;
+    color: @card_fg_color !important;
+    border: 1px solid @sidebar_border_color !important;
+    border-radius: 8px !important;
+    padding: 8px 16px;
+    font-family: "JetBrainsMono Nerd Font";
+    font-size: 11pt;
+}
+
+#main-wrapper button:hover {
+    background-color: @button_hover_bg_color !important;
+}
+
+scrollbar {
+    background-color: @scrollbar_bg_color;
+    border-radius: 4px;
+}
+
+scrollbar slider {
+    background-color: @accent_bg_color !important;
+    border-radius: 4px;
+    min-width: 6px;
+}
+
+#nwg-clipman label {
+    color: @window_fg_color;
+}

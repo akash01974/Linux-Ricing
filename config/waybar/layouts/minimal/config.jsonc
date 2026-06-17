@@ -1,0 +1,27 @@
+{
+    "layer": "top",
+    "width": 1000,
+    "modules-left": [],
+    "modules-center": [
+        "clock",
+        "hyprland/workspaces"
+    ],
+    "modules-right": [],
+    "clock": {
+        "format": "{:%I:%M %p}"
+    },
+    "hyprland/workspaces": {
+        "format": "{icon}",
+        "on-click": "activate",
+        "format-icons": {
+            "1": "",
+            "2": "",
+            "3": "",
+            "4": "",
+            "5": ""
+        },
+        "persistent-workspaces": {
+            "*": 5
+        }
+    }
+}

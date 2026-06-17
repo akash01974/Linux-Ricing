@@ -1,0 +1,119 @@
+/**
+ * Material You Glassmorphic Power Menu
+ * Matugen-generated — replaces wlogout
+ **/
+
+* {
+    font: "JetBrainsMono Nerd Font 11";
+}
+
+window {
+    transparency: "real";
+    location: center;
+    anchor: center;
+    width: 754px;
+    background-color: rgba({{ colors.surface_container_lowest.dark.red }}, {{ colors.surface_container_lowest.dark.green }}, {{ colors.surface_container_lowest.dark.blue }}, 0.55);
+    border: 1px;
+    border-color: rgba({{ colors.outline_variant.dark.red }}, {{ colors.outline_variant.dark.green }}, {{ colors.outline_variant.dark.blue }}, 0.12);
+    border-radius: 24px;
+    padding: 24px 28px;
+    cursor: "default";
+}
+
+mainbox {
+    enabled: true;
+    spacing: 0;
+    padding: 0;
+    background-color: transparent;
+    border: 0px;
+    border-radius: 0px;
+    children: [ "listview" ];
+}
+
+listview {
+    enabled: true;
+    columns: 5;
+    lines: 1;
+    cycle: true;
+    dynamic: false;
+    scrollbar: false;
+    layout: horizontal;
+    reverse: false;
+    fixed-height: true;
+    fixed-columns: true;
+    spacing: 12px;
+    margin: 0px;
+    padding: 0px;
+    border: 0px;
+    border-radius: 0px;
+    background-color: transparent;
+    text-color: #{{ colors.on_surface.dark.hex_stripped }};
+    cursor: "default";
+}
+
+element {
+    enabled: true;
+    spacing: 2px;
+    margin: 0px;
+    padding: 10px;
+    border: 1px;
+    border-color: rgba({{ colors.outline_variant.dark.red }}, {{ colors.outline_variant.dark.green }}, {{ colors.outline_variant.dark.blue }}, 0.2);
+    border-radius: 16px;
+    background-color: rgba({{ colors.surface_dim.dark.red }}, {{ colors.surface_dim.dark.green }}, {{ colors.surface_dim.dark.blue }}, 0.65);
+    text-color: #{{ colors.on_surface.dark.hex_stripped }};
+    orientation: vertical;
+    cursor: pointer;
+    min-width: 130px;
+    min-height: 130px;
+}
+
+element normal.normal {
+    background-color: rgba({{ colors.surface_dim.dark.red }}, {{ colors.surface_dim.dark.green }}, {{ colors.surface_dim.dark.blue }}, 0.65);
+    text-color: #{{ colors.on_surface.dark.hex_stripped }};
+}
+
+element selected.normal {
+    background-color: rgba({{ colors.surface_container_high.dark.red }}, {{ colors.surface_container_high.dark.green }}, {{ colors.surface_container_high.dark.blue }}, 0.85);
+    border-color: rgba({{ colors.primary.dark.red }}, {{ colors.primary.dark.green }}, {{ colors.primary.dark.blue }}, 0.4);
+    text-color: #{{ colors.on_surface.dark.hex_stripped }};
+}
+
+element selected.active {
+    background-color: rgba({{ colors.surface_container_high.dark.red }}, {{ colors.surface_container_high.dark.green }}, {{ colors.surface_container_high.dark.blue }}, 0.9);
+    border-color: rgba({{ colors.primary.dark.red }}, {{ colors.primary.dark.green }}, {{ colors.primary.dark.blue }}, 0.6);
+    text-color: #{{ colors.on_surface.dark.hex_stripped }};
+}
+
+element-icon {
+    background-color: transparent;
+    text-color: #{{ colors.on_surface_variant.dark.hex_stripped }};
+    size: 3.0ch;
+    cursor: pointer;
+    vertical-align: 0.5;
+    horizontal-align: 0.5;
+}
+
+element-text {
+    background-color: transparent;
+    text-color: inherit;
+    cursor: pointer;
+    vertical-align: 0.5;
+    horizontal-align: 0.5;
+    highlight: inherit;
+}
+
+error-message {
+    padding: 15px;
+    border: 0px;
+    border-radius: 0px;
+    background-color: transparent;
+    text-color: #{{ colors.on_surface.dark.hex_stripped }};
+}
+
+textbox {
+    background-color: transparent;
+    text-color: #{{ colors.on_surface.dark.hex_stripped }};
+    vertical-align: 0.5;
+    horizontal-align: 0.0;
+    highlight: none;
+}

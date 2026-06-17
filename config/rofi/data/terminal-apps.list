@@ -1,0 +1,68 @@
+# Terminal Applications Database
+# Format: icon<TAB>category<TAB>display-name<TAB>binary-command
+#
+# Add new entries here. The launcher automatically shows only
+# installed applications by checking command -v at runtime.
+
+# Arch
+󰏓	Arch	Package Install (pacman)	~/.config/rofi/menus/pkg-install-term.sh
+󰏓	Arch	Package Install (Yay)		~/.local/bin/yay-install.sh
+
+# System
+󰆴	System	Installed Package Remove	~/.local/bin/pkg-remove.sh
+󰅖	System	AUR Package Remove		~/.local/bin/aur-remove.sh
+T
+# Development
+󰚰	Development	opencode	opencode
+󰚰	Development	nvim	nvim
+󰚰	Development	lazygit	lazygit
+󰚰	Development	gitui	gitui
+󰚰	Development	helix	helix
+󰚰	Development	micro	micro
+
+# File Managers
+󰇥	File Manager	yazi	yazi
+󰇥	File Manager	ranger	ranger
+󰇥	File Manager	vifm	vifm
+󰇥	File Manager	superfile	superfile
+󰇥	File Manager	lf	lf
+󰇥	File Manager	nnn	nnn
+󰇥	File Manager	broot	broot
+󰇥	File Manager	xplr	xplr
+
+# Monitoring
+󰓅	Monitoring	btop	btop
+󰓅	Monitoring	htop	htop
+󰓅	Monitoring	bottom	btm
+󰓅	Monitoring	bandwhich	bandwhich
+󰓅	Monitoring	glances	glances
+󰓅	Monitoring	nmon	nmon
+
+# Network
+󰤁	Network	nmtui	nmtui
+󰤁	Network	iftop	iftop
+󰤁	Network	iptraf-ng	iptraf-ng
+󰤁	Network	nethogs	nethogs
+󰤁	Network	bmon	bmon
+
+# Containers
+󰆓	Containers	lazydocker	lazydocker
+󰆓	Containers	k9s	k9s
+
+# Media
+󰓃	Media	cava	cava
+󰓃	Media	ncmpcpp	ncmpcpp
+󰓃	Media	cmus	cmus
+󰓃	Media	vis	vis
+
+# Fun
+󰥔	Fun	tty-clock	tty-clock
+󰘩	Fun	cmatrix	cmatrix
+󰘩	Fun	pipes.sh	pipes.sh
+󰈞	Fun	asciiquarium	asciiquarium
+󰘩	Fun	sl	sl
+󰌌	Fun	clavirio	clavirio
+
+# System / Information
+󰌨	System	fastfetch	--hold fastfetch
+󰌨	System	neofetch	neofetch

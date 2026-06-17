@@ -1,0 +1,59 @@
+# OS files
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+
+# Editor/IDE
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Cache and temp
+**/__pycache__/
+*.pyc
+.cache/
+node_modules/
+.generated/
+generated/
+
+# Secrets and sensitive
+**/env.lua
+**/.env
+**/id_*
+**/*.pem
+**/*.key
+**/*.cert
+*.log
+history
+
+# Generated / cache (Matugen outputs)
+config/matugen/generated/
+config/matugen/templates/*.backup
+config/rofi/generated/
+**/__pycache__/
+*.pyc
+
+# Large binaries
+*.iso
+*.img
+*.bin
+*.exe
+*.dmg
+*.tar.gz
+*.zip
+*.7z
+
+# Wallpapers (user should add their own)
+wallpapers/*
+!wallpapers/README.md
+
+# Screenshots (user should add their own)
+screenshots/*
+!screenshots/.gitkeep
+
+# Files from source that contain absolute paths
+config/hypr/hyprlock.conf
+config/hypr/hyprlock-colors.conf

@@ -1,0 +1,22 @@
+<* for name, value in colors *>
+    @define-color {{name}} {{value.default.hex}};
+<* endfor *>
+
+@define-color bg0 @surface_dim;
+@define-color bg1 @surface_container;
+@define-color bg2 @surface_dim;
+@define-color bg3 @surface_variant;
+@define-color bg4 @outline_variant;
+
+@define-color fg @on_surface;
+@define-color red @error;
+@define-color orange @tertiary;
+@define-color yellow @tertiary_container;
+@define-color green @secondary;
+@define-color aqua @secondary_container;
+@define-color blue @primary;
+@define-color purple @primary_container;
+
+@define-color grey0 @on_surface;
+@define-color grey1 @on_surface_variant;
+@define-color grey2 @outline;

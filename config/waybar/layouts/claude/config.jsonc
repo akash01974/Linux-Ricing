@@ -1,0 +1,147 @@
+// Material You Waybar Configuration
+// Place at: ~/.config/waybar/config.jsonc
+{
+    "layer": "top",
+    "position": "top",
+    "height": 42,
+    "width": 100,
+    "spacing": 0,    
+    "margin-top": 10,
+    "margin-left": 12,
+    "margin-right": 12,
+    "margin-bottom": 0,
+
+    "modules-left": [
+        "custom/launcher",
+        "clock"
+    ],
+
+    "modules-center": [
+        "hyprland/workspaces"
+    ],
+
+    "modules-right": [
+        "tray",
+        "pulseaudio",
+        "network",
+        "bluetooth",
+        "battery",
+        "custom/power"
+    ],
+
+    // ── Left Modules ──────────────────────────────────────────────
+
+    "custom/launcher": {
+        "format": "󰣇",
+        "tooltip": false,
+        "on-click": "rofi -show drun",
+        "on-click-right": "rofi -show run"
+    },
+
+    "hyprland/workspaces": {
+        "format": "{name}",
+        "persistent-workspaces": {
+            "*": [1, 2, 3, 4, 5]
+        },
+        "on-scroll-up": "hyprctl dispatch workspace e+1",
+        "on-scroll-down": "hyprctl dispatch workspace e-1"
+    },
+
+    // ── Center Modules ─────────────────────────────────────────────
+
+    "clock": {
+        "format": "󰥔 {:%I:%M %p}",
+        "format-alt": "󰸗  {:%Y-%m-%d}",
+        "tooltip-format": "<big>{:%B %Y}</big>\n<tt><small>{calendar}</small></tt>",
+        "calendar": {
+            "mode"          : "month",
+            "mode-mon-col"  : 3,
+            "weeks-pos"     : "right",
+            "on-scroll"     : 1,
+            // Catppuccin hardcoded hex values replaced; now uses spans that inherit Matugen CSS variables
+            "format": {
+                "months":     "<span><b>{}</b></span>",
+                "days":       "<span>{}</span>",
+                "weeks":      "<span alpha='50%'>W{}</span>",
+                "weekdays":   "<span><b>{}</b></span>",
+                "today":      "<span alpha='100%'><b><u>{}</u></b></span>"
+            }
+        },
+        "actions": {
+            "on-click-right": "mode",
+            "on-scroll-up": "shift_up",
+            "on-scroll-down": "shift_down"
+        }
+    },
+
+    // ── Right Modules ──────────────────────────────────────────────
+
+    "tray": {
+        "icon-size": 16,
+        "spacing": 10,
+        "show-passive-items": true
+    },
+
+    "pulseaudio": {
+        "format": "{icon}  {volume}%",
+        "format-muted": "󰝟  Muted",
+        "format-bluetooth": "󰂰  {volume}%",
+        "format-bluetooth-muted": "󰂲  Muted",
+        "format-icons": {
+            "headphone": "󰋋",
+            "hands-free": "󰋎",
+            "headset": "󰋎",
+            "phone": "󰏲",
+            "portable": "󰏲",
+            "car": "󰄋",
+            "default": ["󰕿", "󰖀", "󰕾"]
+        },
+        "scroll-step": 5,
+        "on-click": "pavucontrol",
+        "on-click-right": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
+        "tooltip": true,
+        "tooltip-format": "{desc}"
+    },
+
+    "network": {
+        "format-wifi": "󰖩 {signalStrength}%",
+        "format-ethernet": "󰈀",
+        "format-disconnected": "󰖪",
+        "on-click": "wifi-manager --toggle"
+},
+
+    "bluetooth": {
+        "format": "󰂯",
+        "format-connected": "󰂱  {device_alias}",
+        "format-connected-battery": "󰂱  {device_alias} {device_battery_percentage}%",
+        "format-disabled": "󰂲",
+        "format-off": "󰂲",
+        "max-length": 20,
+        "tooltip-format": "{controller_alias}\t{controller_address}\n\n{num_connections} connected",
+        "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
+        "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
+        "tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_address}\t{device_battery_percentage}%",
+        "on-click": "blueman-manager"
+    },
+
+    "battery": {
+        "states": {
+            "good": 95,
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{icon} {capacity}%",
+        "format-charging": "󰂄 {capacity}%",
+        "format-full": "󰁹  Full",
+        "format-icons": ["󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
+        "tooltip-format": "{timeTo}\n{power}W",
+        "interval": 30
+    },
+
+    "custom/power": {
+        "format": "󰐥",
+        "tooltip": false,
+        "on-click": "wlogout --protocol layer-shell",
+        "on-click-right": "systemctl suspend"
+    }
+}

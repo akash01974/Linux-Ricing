@@ -1,0 +1,81 @@
+[com/rafaelmardojai/Blanket]
+playing=false
+volume=1.0
+
+[com/rafaelmardojai/Blanket/e52f7134-cff9-463b-9f7d-3740d2cc1d57]
+hide-inactive=false
+sounds-mute={'rain': true, 'storm': true, 'wind': true, 'waves': true, 'stream': false, 'birds': false, 'train': true, 'city': true, 'coffee-shop': true, 'fireplace': true, 'pink-noise': true, 'white-noise': true, 'boat': true, 'summer-night': true}
+sounds-volume={'rain': 0.44, 'storm': 0.51000000000000001, 'wind': 0.48999999999999999, 'waves': 0.12, 'stream': 0.70999999999999996, 'birds': 0.54000000000000004, 'train': 1.0, 'city': 0.5, 'coffee-shop': 0.31, 'fireplace': 0.63, 'pink-noise': 0.5, 'white-noise': 0.5, 'boat': 0.29999999999999999, 'summer-night': 0.059999999999999998}
+
+[com/usebottles/bottles]
+show-sandbox-warning=false
+startup-view='page_list'
+window-height=834
+window-width=1578
+
+[org/erikreider/swaync]
+dnd-state=false
+
+[org/gnome/clocks]
+world-clocks=[{'location': <(uint32 2, <('Kolkata', 'VECC', true, [(0.39531707557671564, 1.5437437233889846)], [(0.39391596015979957, 1.5423426079720683)])>)>}]
+
+[org/gnome/clocks/state/window]
+maximized=true
+panel-id='timer'
+size=(0, 0)
+
+[org/gnome/desktop/interface]
+color-scheme='prefer-dark'
+cursor-size=24
+cursor-theme='default'
+font-antialiasing='rgba'
+font-hinting='full'
+font-name='Adwaita Sans 11'
+font-rgba-order='rgb'
+gtk-theme='Gruvbox-BL-MB-Dark-Medium'
+icon-theme='Papirus'
+text-scaling-factor=1.0
+toolbar-icons-size='large'
+toolbar-style='both-horiz'
+
+[org/gnome/desktop/sound]
+event-sounds=true
+input-feedback-sounds=false
+
+[org/gnome/desktop/wm/preferences]
+theme='Gruvbox-BL-MB-Dark-Medium'
+
+[org/gnome/nautilus/icon-view]
+captions=['none', 'none', 'none']
+default-zoom-level='small'
+
+[org/gnome/nautilus/list-view]
+use-tree-view=true
+
+[org/gnome/nautilus/preferences]
+click-policy='double'
+default-folder-viewer='icon-view'
+migrated-gtk-settings=true
+show-image-thumbnails='local-only'
+
+[org/gnome/nautilus/window-state]
+initial-size=(890, 550)
+maximized=true
+
+[org/gtk/gtk4/settings/file-chooser]
+show-hidden=false
+sort-directories-first=false
+
+[org/gtk/settings/file-chooser]
+date-format='regular'
+location-mode='path-bar'
+show-hidden=true
+show-size-column=true
+show-type-column=true
+sidebar-width=175
+sort-column='type'
+sort-directories-first=false
+sort-order='ascending'
+type-format='category'
+window-position=(0, 0)
+window-size=(823, 797)

@@ -1,0 +1,164 @@
+@import "~/.config/waybar/colors.css";
+
+* {
+    border: none;
+    border-radius: 0;
+    font-family: "Rubik", "JetBrainsMono Nerd Font Propo", "Noto Sans CJK JP", "Noto Sans CJK KR";
+    font-size: 16px;
+    min-height: 0;
+    padding: 0;
+    margin: 0;
+}
+
+window#waybar {
+    background: transparent;
+}
+
+.modules-left,
+.modules-center,
+.modules-right {
+    background: @surface_container;
+    padding: 7px 18px;
+    border-radius: 32px;
+    border: none;
+}
+
+#clock,
+#pulseaudio,
+#network,
+#battery,
+#custom-media,
+#idle_inhibitor,
+#tray,
+#cpu,
+#memory {
+    background: transparent;
+    padding: 0 7px;
+}
+
+#custom-media {
+    color: @tertiary;
+    font-weight: bold;
+    font-size: 14px;
+    margin: 0 0 0 7px;
+}
+
+#clock {
+    color: @on_surface;
+    font-weight: 600;
+    font-size: 16px;
+}
+
+#pulseaudio {
+    color: @primary;
+}
+
+#pulseaudio.muted {
+    color: @on_surface_variant;
+}
+
+#network {
+    color: @on_surface_variant;
+    font-size: 14px;
+}
+
+#network.disconnected {
+    color: @error;
+}
+
+#cpu {
+    color: @on_surface_variant;
+    font-size: 14px;
+}
+
+#memory {
+    color: @on_surface_variant;
+    font-size: 14px;
+}
+
+#battery {
+    color: @secondary;
+}
+
+#battery.charging {
+    color: @tertiary;
+}
+
+#battery.warning:not(.charging) {
+    color: @error;
+}
+
+#battery.critical:not(.charging) {
+    color: @error;
+    animation: blink 1.5s steps(2) infinite;
+}
+
+@keyframes blink {
+    to {
+        opacity: 0.4;
+    }
+}
+
+#idle_inhibitor {
+    color: @on_surface_variant;
+    font-size: 14px;
+}
+
+#idle_inhibitor.activated {
+    color: @primary;
+}
+
+#tray {
+    padding: 0 7px;
+}
+
+#tray > .passive {
+    -gtk-icon-effect: dim;
+}
+
+#tray > .needs-attention {
+    -gtk-icon-effect: highlight;
+    color: @error;
+}
+
+#workspaces {
+    background: transparent;
+    padding: 0;
+    margin: 0 7px;
+}
+
+#workspaces button {
+    background: transparent;
+    padding: 0 9px;
+    margin: 0 2px;
+    border-radius: 15px;
+    color: @on_surface_variant;
+}
+
+#workspaces button.active {
+    background: linear-gradient(135deg, @primary 0%, @tertiary 50%, @secondary 100%);
+    color: @on_primary;
+    font-weight: bold;
+    min-width: 50px;
+    border-radius: 15px;
+}
+
+#workspaces button:hover {
+    background: @surface_container_highest;
+    color: @on_surface;
+}
+
+#workspaces button.urgent {
+    background: @error;
+    color: @on_error;
+}
+
+tooltip {
+    background: @surface_container_highest;
+    border-radius: 15px;
+}
+
+tooltip label {
+    color: @on_surface;
+    padding: 4px 8px;
+}

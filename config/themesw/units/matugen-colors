@@ -1,0 +1,13 @@
+#!/bin/bash
+# Matugen theme switching unit for themesw
+# Takes "dark" or "light" as argument
+
+MODE="${1:-dark}"
+WALLPAPER=$(awww query 2>/dev/null | grep -oP '(?<=image: )[^\s]+')
+
+if [[ -z "$WALLPAPER" ]]; then
+    notify-send --icon dialog-error "themesw" "Could not detect current wallpaper"
+    exit 1
+fi
+
+matugen image "$WALLPAPER" --mode "$MODE" --prefer darkness

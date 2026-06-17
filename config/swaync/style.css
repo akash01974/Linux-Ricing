@@ -1,0 +1,69 @@
+@import '../../.cache/wal/colors-waybar.css';
+@import 'Theme/notifications.css';
+@import 'Theme/central_control.css';
+
+.control-center {
+  border-radius: 20px;
+}
+
+.notification-background {
+  border-radius: 20px;
+}
+
+.floating-notifications.background .notification-row .notification-background {
+  border-radius: 20px;
+}
+
+.widget-title,
+.widget-notifications {
+  border-radius: 16px;
+  padding: 8px;
+  margin: 4px 6px;
+}
+
+.widget-dnd {
+  border-radius: 16px;
+  padding: 8px;
+  margin: 4px 6px;
+}
+
+.notification-content {
+  margin: 0;
+  padding: 0;
+}
+
+.notification-content .text-box {
+  margin: 0;
+}
+
+.notification-content .summary,
+.widget-title > label,
+.widget-dnd > label {
+  font-size: 0.95rem;
+  margin: 0;
+  padding: 0;
+}
+
+.widget-title > box,
+.widget-dnd > box {
+  margin: 0;
+  padding: 0;
+}
+
+.widget-title button,
+.widget-dnd switch {
+  margin: 0 0 0 auto;
+}
+
+.widget-title {
+  margin-bottom: 0;
+}
+
+.widget-dnd {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.widget-notifications {
+  margin-top: 0;
+}

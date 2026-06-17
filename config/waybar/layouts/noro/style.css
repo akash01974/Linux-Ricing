@@ -1,0 +1,192 @@
+@import "~/.config/waybar/colors.css";
+
+/*
+ * Capsule Style for Waybar
+ * A modern and minimalist Material You style with capsule-like modules.
+ */
+
+* {
+    border: none;
+    border-radius: 0;
+    font-family: "JetBrainsMono Nerd Font Propo", "JetBrains Mono", "Fira Code", "DejaVu Sans", "Noto Sans", sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    margin: 0;
+    padding: 0;
+    min-height: 0px;
+}
+
+window#waybar {
+    /* Using matugen alpha function for clean transparency */
+    background-color: alpha(@background, 0.0);
+    color: @on_background;
+}
+
+/* --- Layout Groupings --- */
+
+.modules-left,
+.modules-center,
+.modules-right {
+    background-color: @surface_container_lowest;
+    border-radius: 20px;
+    padding: 4px 8px;
+    margin: 4px;
+}
+
+/* --- Base Module Styling --- */
+
+#clock,
+#pulseaudio,
+#network,
+#backlight,
+#cpu,
+#memory,
+#idle_inhibitor,
+#tray,
+#bluetooth,
+#custom-power,
+#custom-weather,
+#custom-nix,
+#custom-swaync,
+#custom-temperature {
+    background-color: transparent;
+    /* Rely on group background for cleaner capsule look */
+    color: @on_surface;
+    padding: 0px 12px;
+    margin: 0px 2px;
+}
+
+/* --- Left Modules / Workspaces --- */
+
+#custom-nix {
+    color: @primary;
+    font-size: 22px;
+    padding-left: 12px;
+    padding-right: 8px;
+}
+
+#workspaces {
+    padding: 0px;
+}
+
+#workspaces button {
+    font-size: 16px;
+    font-weight: 900;
+    min-width: 20px;
+    padding: 0px;
+    margin: 4px 6px;
+    color: @surface_variant;
+    background-color: @surface_variant;
+    border-radius: 20px;
+    transition: all 0.25s cubic-bezier(0.4, 0.0, 0.2, 1);
+}
+
+#workspaces button.active {
+    color: @on_primary;
+    background-color: @primary;
+    min-width: 45px;
+}
+
+#workspaces button:hover {
+    background-color: @primary_container;
+    color: @on_primary_container;
+}
+
+#workspaces button.urgent {
+    background-color: @error;
+    color: @on_error;
+}
+
+/* --- Center Modules --- */
+
+#clock {
+    color: @on_primary_container;
+    /* background-color: @primary_container;  */
+    border-radius: 14px;
+    margin: 4px 2px;
+}
+
+/* --- Right Modules --- */
+
+#pulseaudio {
+    color: @tertiary;
+}
+
+#pulseaudio.muted {
+    color: @error;
+}
+
+#network {
+    color: @tertiary;
+}
+
+#network.disconnected,
+#network.disabled {
+    color: @error;
+}
+
+#network.ethernet,
+#network.linked,
+#network.wifi {
+    color: @tertiary;
+}
+
+#custom-swaync {
+    color: @secondary;
+}
+
+#custom-power {
+    color: @error;
+    background-color: @error_container;
+    border-radius: 14px;
+    margin: 4px 2px;
+    padding: 0px 14px;
+}
+
+/* Hardware & State Monitors */
+
+#temperature.critical {
+    color: @error;
+}
+
+#cava {
+    color: @tertiary;
+    margin: 0px 12px;
+    background-color: transparent;
+}
+
+/* --- Battery Styles --- */
+
+#battery {
+    background-color: @primary;
+    /* Matugen fallback for success */
+    color: @on_primary;
+    margin: 4px 4px;
+    padding: 0px 10px;
+    font-size: 16px;
+    border-radius: 14px;
+}
+
+#battery.charging,
+#battery.plugged {
+    color: @on_primary_container;
+    background-color: @primary_container;
+}
+
+#battery.warning {
+    color: @on_error_container;
+    background-color: @error_container;
+}
+
+#battery.critical:not(.charging) {
+    color: @on_error;
+    background-color: @error;
+    animation: blink 1s linear infinite;
+}
+
+@keyframes blink {
+    to {
+        background-color: transparent;
+        color: @error;
+    }
+}

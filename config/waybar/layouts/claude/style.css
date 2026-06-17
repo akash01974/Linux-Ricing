@@ -1,0 +1,204 @@
+/* Material You (Material 3) Waybar Style
+ * Place at: ~/.config/waybar/style.css
+ *
+ * Follows M3 design language:
+ * - Fully-rounded "pill" shapes (stadium corners) for containers and active states
+ * - Tonal surface elevation (surface_container -> surface_container_high)
+ * - Color roles: primary/on_primary, *_container/on_*_container pairs
+ * - State layers via subtle opacity shifts on hover
+ */
+
+@import url("colors.css");
+
+* {
+    font-family: "Roboto", "Google Sans", "Noto Sans", "Font Awesome 6 Free", sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    min-height: 0;
+}
+
+window#waybar {
+    background: transparent;
+}
+
+/* ── Base "tonal surface" pill applied to every module group ──── */
+
+#custom-launcher,
+#workspaces,
+#clock,
+#tray,
+#pulseaudio,
+#network,
+#bluetooth,
+#battery,
+#custom-power {
+    background-color: @surface_container;
+    color: @on_surface_variant;
+    border-radius: 999px; /* stadium shape, core M3 trait */
+    margin: 6px 3px;
+    padding: 0 16px;
+    min-height: 32px;
+    transition: background-color 200ms ease, color 200ms ease;
+}
+
+/* ── App launcher: filled primary pill (FAB-like) ──────────────── */
+
+#custom-launcher {
+    background-color: @primary;
+    color: @on_primary;
+    font-size: 20px;
+    padding: 0 18px;
+    margin-left: 6px;
+    min-height: 32px;
+}
+
+#custom-launcher:hover {
+    background-color: @primary_container;
+    color: @on_primary_container;
+}
+
+/* ── Clock: tonal primary container pill ───────────────────────── */
+
+#clock {
+    background-color: @primary_container;
+    color: @on_primary_container;
+    font-weight: 700;
+    padding: 0 20px;
+    min-height: 32px;
+}
+
+#clock:hover {
+    background-color: @surface_container_high;
+    color: @on_surface;
+}
+
+/* ── Workspaces: M3 navigation-rail style segmented pill ──────── */
+
+#workspaces {
+    padding: 4px;
+}
+
+#workspaces button {
+    all: initial;
+    font-family: "Roboto", "Noto Sans", sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    color: @on_surface_variant;
+    background-color: transparent;
+    border-radius: 999px;
+    min-width: 32px;
+    min-height: 32px;
+    padding: 0 4px;
+    margin: 0 2px;
+    transition: background-color 200ms ease, color 200ms ease;
+}
+
+#workspaces button label {
+    color: inherit;
+}
+
+#workspaces button:hover {
+    background-color: @surface_container_high;
+    color: @on_surface;
+}
+
+/* Active workspace = M3 "secondary container" indicator pill,
+   the canonical look for selected nav-rail items */
+#workspaces button.active {
+    background-color: @secondary_container;
+    color: @on_secondary_container;
+    min-width: 44px;
+}
+
+#workspaces button.urgent {
+    background-color: @error;
+    color: @on_error;
+}
+
+/* ── Tray ───────────────────────────────────────────────────────── */
+
+#tray {
+    padding: 0 14px;
+    min-height: 32px;
+}
+
+#tray > .passive {
+    -gtk-icon-effect: dim;
+}
+
+#tray > .needs-attention {
+    background-color: @error_container;
+    border-radius: 999px;
+}
+
+/* ── Status modules: tonal surface pills with state-layer hover ── */
+
+#pulseaudio:hover,
+#network:hover,
+#bluetooth:hover,
+#battery:hover {
+    background-color: @surface_container_high;
+    color: @on_surface;
+}
+
+#network.disconnected {
+    background-color: @error_container;
+    color: @on_error_container;
+}
+
+#bluetooth.disabled,
+#bluetooth.off {
+    color: @outline;
+}
+
+#bluetooth.connected {
+    background-color: @tertiary_container;
+    color: @on_tertiary_container;
+}
+
+/* ── Battery state colors follow M3 semantic roles ─────────────── */
+
+#battery.charging {
+    background-color: @primary_container;
+    color: @on_primary_container;
+}
+
+#battery.warning:not(.charging) {
+    background-color: @tertiary_container;
+    color: @on_tertiary_container;
+}
+
+#battery.critical:not(.charging) {
+    background-color: @error_container;
+    color: @on_error_container;
+}
+
+/* ── Power: error-tonal pill ───────────────────────────────────── */
+
+#custom-power {
+    background-color: @error_container;
+    color: @on_error_container;
+    font-size: 17px;
+    padding: 0 18px;
+    margin-right: 6px;
+    min-height: 32px;
+}
+
+#custom-power:hover {
+    background-color: @error;
+    color: @on_error;
+}
+
+/* ── Tooltips: M3 elevation level 2 surface ────────────────────── */
+
+tooltip {
+    background-color: @surface_container_high;
+    color: @on_surface;
+    border-radius: 16px;
+    border: 1px solid @outline_variant;
+    padding: 10px 14px;
+}
+
+tooltip label {
+    color: @on_surface;
+}

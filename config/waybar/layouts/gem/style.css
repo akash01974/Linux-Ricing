@@ -1,0 +1,178 @@
+@import "~/.config/waybar/colors.css";
+
+* {
+    /* Updated to Nunito as the primary font, keeping Nerd Fonts for icons */
+    font-family: 'Nunito', "JetBrainsMono Nerd Font", "FiraCode Nerd Font", sans-serif;
+    font-weight: bold;
+    font-size: 16px;
+    border-radius: 19px;
+}
+
+window#waybar {
+    background-color: transparent;
+    color: @on_background;
+    margin: 8px;
+}
+
+/* --- Workspaces --- */
+#workspaces {
+    background-color: @surface_container_high;
+    padding: 0;
+}
+
+#workspaces button {
+    transition: all 0.25s ease;
+    color: @on_surface_variant;
+}
+
+#workspaces button:hover {
+    background-color: @tertiary_container;
+    color: @on_tertiary_container;
+}
+
+#workspaces button.active {
+    color: @on_primary;
+    background-color: @primary;
+}
+
+/* --- Modules Positioning --- */
+.modules-left {
+    margin-left: 12px;    
+}
+
+.modules-right {
+    margin-right: 12px;   
+}
+
+/* --- System Modules --- */
+#battery {
+    background-color: @surface;
+    border-radius: 20px;
+    color: @primary;
+    margin: 0;
+    padding: 6px 15px;
+}
+
+#pulseaudio,
+#backlight,
+#network {
+    color: @secondary;
+    background-color: @surface;
+    margin: 0;
+    padding: 0 7px;
+}
+
+#network {
+    color: @tertiary;
+}
+
+#pulseaudio {
+    color: @primary;
+    padding: 6px 13px 6px 12px;
+}
+
+#clock {
+    color: @tertiary;
+    background-color: @surface;
+    margin: 0 15px 0 0;
+    padding: 0 15px;
+}
+
+/* --- Media & Custom Elements --- */
+#custom-media {
+    color: @tertiary;
+    background-color: @surface_container_high;
+    margin: 0 0 0 15px;
+    padding: 6px 15px;
+}
+
+#custom-spotify {
+    color: #1db954; /* Keeping original Spotify green brand color */
+    padding: 0 10px;
+}
+
+/* --- Distro & Launchers --- */
+#distro-group {
+    background-color: @surface;
+    border-radius: 20px;
+    color: @primary;
+}
+
+#custom-browser {
+    color: @error;
+    padding-right: 12px;
+    padding-left: 12px;
+}
+
+#custom-code {
+    color: @tertiary;
+    padding-right: 12px;
+    padding-left: 12px;
+}
+
+#custom-terminal {
+    color: @secondary;
+    padding-right: 12px;
+    padding-left: 12px;
+}
+
+#custom-distro {
+    color: @primary;
+    padding: 6px 15px 6px 10px;
+}
+
+#custom-distro {
+    color: @primary;
+    padding-left: 12px;
+}
+
+#custom-spotify {
+    color: #1DB954;
+    padding-left: 12px;
+    padding-right: 12px;
+}
+
+/* --- Utilities & Daemon Blocks --- */
+#power-profiles-daemon,
+#idle_inhibitor {
+    padding: 6px 15px 6px 10px;
+    background-color: @surface_container_high;
+    border-radius: 20px;
+    color: @primary;
+}
+
+#custom-swaync {
+    padding: 6px 15px 6px 10px;
+    background-color: @surface;
+    border-radius: 20px;
+    color: @primary;
+}
+
+/* --- Pulseaudio Slider --- */
+#pulseaudio-slider {
+    margin: 4px 5px;
+    padding: 0 2px;
+    background-color: transparent;
+    border-radius: 20px;
+}
+
+#pulseaudio-slider trough {
+    min-height: 10px;
+    min-width: 80px;
+    border-radius: 10px;
+    background-color: @surface_variant;
+}
+
+#pulseaudio-slider highlight {
+    min-height: 10px;
+    border-radius: 10px;
+    background-color: @primary;
+}
+
+#pulseaudio-slider slider {
+    min-height: 12px;
+    min-width: 12px;
+    margin: -2px 0;
+    border-radius: 100%;
+    background-color: @outline;
+}

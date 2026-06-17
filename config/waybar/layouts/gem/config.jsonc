@@ -1,0 +1,40 @@
+{
+  "layer": "top",
+  "position": "top",
+  "height": 10,
+  "margin-top": 7,
+  "spacing": 5,
+  "on-click": "~/.config/hypr/scripts/volume-popup.sh",
+  "include": [
+    "~/.config/waybar/layouts/gem/modules/clock.jsonc",
+    "~/.config/waybar/layouts/gem/modules/distro.jsonc",
+    "~/.config/waybar/layouts/gem/modules/network.jsonc",
+    "~/.config/waybar/layouts/gem/modules/power-profile.jsonc",
+    "~/.config/waybar/layouts/gem/modules/audio.jsonc",
+    "~/.config/waybar/layouts/gem/modules/workspace.jsonc",
+    "~/.config/waybar/layouts/gem/modules/idle_inhibitor.jsonc",
+    "~/.config/waybar/layouts/gem/modules/groups.jsonc",
+    "~/.config/waybar/layouts/gem/modules/swaync.jsonc",
+    "~/.config/waybar/layouts/gem/modules/battery.jsonc"
+  ],
+  "modules-left": [
+    "group/distro-group",
+    "clock"
+  ],
+  "modules-center": [
+    "hyprland/workspaces",
+    "idle_inhibitor"
+  ],
+  "modules-right": [
+    "group/audio",
+    "power-profile",
+    "group/network",
+    "battery",
+    "custom/swaync"
+  ]
+}
+
+
+
+
+

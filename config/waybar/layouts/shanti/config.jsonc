@@ -1,0 +1,114 @@
+{
+    "position": "top",
+    "margin-top": 10,
+    "modules-left": [
+        "custom/media"
+    ],
+    "modules-center": [
+        "hyprland/workspaces",
+        "clock"
+    ],
+    "modules-right": [
+        "idle_inhibitor",
+        "tray",
+        "pulseaudio",
+        "network",
+        "cpu",
+        "memory",
+        "battery"
+    ],
+    "hyprland/workspaces": {
+        "format": "{icon}",
+        "format-icons": {
+            "1": "1",
+            "2": "2",
+            "3": "3",
+            "4": "4",
+            "5": "5",
+            "6": "六",
+            "7": "七",
+            "8": "八",
+            "9": "九",
+            "10": "十",
+            "default": "",
+            "urgent": "●"
+        },
+        "persistent-workspaces": {
+            "*": 5
+        },
+        "on-click": "activate",
+        "on-scroll-down": "hyprctl dispatch workspace e+1",
+        "on-scroll-up": "hyprctl dispatch workspace e-1"
+    },
+    "idle_inhibitor": {
+        "format": "{icon}",
+        "format-icons": {
+            "activated": "",
+            "deactivated": ""
+        },
+        "tooltip-format-activated": "Idle inhibitor: ON",
+        "tooltip-format-deactivated": "Idle inhibitor: OFF"
+    },
+    "tray": {
+        "icon-size": 16,
+        "spacing": 8
+    },
+    "pulseaudio": {
+        "format": "{icon}",
+        "format-muted": "󰝟",
+        "tooltip-format": "{volume}% - {desc}",
+        "scroll-step": 5,
+        "on-click": "pavucontrol",
+        "format-icons": {
+            "default": "󰕾"
+        }
+    },
+    "network": {
+        "format-wifi": "󰤨",
+        "format-ethernet": "󱎔",
+        "format-disconnected": "󰤮",
+        "tooltip-format-wifi": "{essid} ({signalStrength}%) {ifname}",
+        "tooltip-format-ethernet": "{ifname} - {ipaddr}",
+        "tooltip-format-disconnected": "Disconnected"
+    },
+    "cpu": {
+        "format": "󰍛 {usage}%",
+        "tooltip": false,
+        "interval": 5
+    },
+    "memory": {
+        "format": " {percentage}%",
+        "tooltip-format": "{used:0.1f}GiB / {total:0.1f}GiB used",
+        "interval": 5
+    },
+    "battery": {
+        "format": "{icon}",
+        "format-charging": "󰂄",
+        "format-icons": [
+            "󰁺",
+            "󰁼",
+            "󰁾",
+            "󰂀",
+            "󰁹"
+        ],
+        "rotate": 270,
+        "tooltip-format": "Battery is at {capacity}% ({time})"
+    },
+    "clock": {
+        "format": "{:%H:%M}",
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
+    },
+    "custom/media": {
+        "format": "{}",
+        "escape": true,
+        "return-type": "json",
+        "max-length": 40,
+        "interval": 1,
+        "on-click": "playerctl play-pause",
+        "on-click-right": "playerctl stop",
+        "smooth-scrolling-threshold": 1,
+        "on-scroll-up": "playerctl next",
+        "on-scroll-down": "playerctl previous",
+        "exec": "$HOME/.config/waybar/scripts/mediaplayer.py 2>/dev/null"
+    }
+}

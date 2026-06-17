@@ -1,0 +1,73 @@
+/* Matugen-generated glassmorphic wlogout
+   Regenerated on wallpaper change — do not edit manually */
+
+window {
+  background-color: rgba(0, 0, 0, 0.45);
+}
+
+#container {
+  background-color: rgba({{ colors.surface_container_lowest.dark.red }}, {{ colors.surface_container_lowest.dark.green }}, {{ colors.surface_container_lowest.dark.blue }}, 0.55);
+  border: 1px solid rgba({{ colors.outline_variant.dark.red }}, {{ colors.outline_variant.dark.green }}, {{ colors.outline_variant.dark.blue }}, 0.12);
+  border-radius: 24px;
+  margin: 340px 400px;
+  padding: 24px 28px;
+}
+
+button {
+  color: #{{ colors.on_surface.dark.hex_stripped }};
+  background-color: rgba({{ colors.surface_dim.dark.red }}, {{ colors.surface_dim.dark.green }}, {{ colors.surface_dim.dark.blue }}, 0.65);
+  outline-style: none;
+  border: 1px solid rgba({{ colors.outline_variant.dark.red }}, {{ colors.outline_variant.dark.green }}, {{ colors.outline_variant.dark.blue }}, 0.2);
+  border-radius: 16px;
+
+  min-width: 130px;
+  min-height: 130px;
+  margin: 10px;
+
+  background-repeat: no-repeat;
+  background-position: center 28%;
+  background-size: 36px;
+
+  padding-top: 62px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+
+  transition: background-color 0.2s ease,
+              border-color 0.2s ease,
+              box-shadow 0.2s ease;
+}
+
+button:hover {
+  background-color: rgba({{ colors.surface_container_high.dark.red }}, {{ colors.surface_container_high.dark.green }}, {{ colors.surface_container_high.dark.blue }}, 0.8);
+  background-size: 40px;
+  border-color: rgba({{ colors.primary.dark.red }}, {{ colors.primary.dark.green }}, {{ colors.primary.dark.blue }}, 0.4);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+}
+
+button:focus {
+  background-color: rgba({{ colors.surface_container_high.dark.red }}, {{ colors.surface_container_high.dark.green }}, {{ colors.surface_container_high.dark.blue }}, 0.9);
+  border-color: #{{ colors.primary.dark.hex_stripped }};
+  box-shadow: 0 0 0 2px rgba({{ colors.primary.dark.red }}, {{ colors.primary.dark.green }}, {{ colors.primary.dark.blue }}, 0.35);
+}
+
+button:active {
+  background-color: rgba({{ colors.surface_container_lowest.dark.red }}, {{ colors.surface_container_lowest.dark.green }}, {{ colors.surface_container_lowest.dark.blue }}, 0.9);
+  border-color: rgba({{ colors.primary.dark.red }}, {{ colors.primary.dark.green }}, {{ colors.primary.dark.blue }}, 0.6);
+}
+
+#lock {
+  background-image: url("~/.config/wlogout/icons/lock_white.png");
+}
+#logout {
+  background-image: url("~/.config/wlogout/icons/logout_white.png");
+}
+#suspend {
+  background-image: url("~/.config/wlogout/icons/suspend_white.png");
+}
+#shutdown {
+  background-image: url("~/.config/wlogout/icons/shutdown_white.png");
+}
+#reboot {
+  background-image: url("~/.config/wlogout/icons/reboot_white.png");
+}

@@ -1,0 +1,97 @@
+/*
+ * GTK Colors
+ * Generated with Matugen
+ */
+
+@define-color accent_color #84d6c2;
+@define-color accent_fg_color #00382e;
+@define-color accent_bg_color #84d6c2;
+
+@define-color window_bg_color #090f0e;
+@define-color window_fg_color #dee4e0;
+
+@define-color headerbar_bg_color #0e1513;
+@define-color headerbar_fg_color #dee4e0;
+@define-color headerbar_border_color #89938f;
+@define-color headerbar_backdrop_color @window_bg_color;
+
+@define-color popover_bg_color #0e1513;
+@define-color popover_fg_color #dee4e0;
+
+@define-color view_bg_color #0e1513;
+@define-color view_fg_color #dee4e0;
+
+@define-color card_bg_color #0e1513;
+@define-color card_fg_color #dee4e0;
+@define-color card_shadow_color #000000;
+
+@define-color sidebar_bg_color #0e1513;
+@define-color sidebar_fg_color #dee4e0;
+@define-color sidebar_border_color #89938f;
+@define-color sidebar_backdrop_color @window_bg_color;
+
+@define-color dialog_bg_color #0e1513;
+@define-color dialog_fg_color #dee4e0;
+
+@define-color selected_bg_color #84d6c2;
+@define-color selected_fg_color #00382e;
+
+@define-color button_bg_color #0e1513;
+@define-color button_fg_color #dee4e0;
+@define-color button_hover_bg_color #252b29;
+@define-color button_hover_fg_color #dee4e0;
+
+@define-color entry_bg_color #0e1513;
+@define-color entry_fg_color #dee4e0;
+
+@define-color error_color #ffb4ab;
+@define-color error_bg_color #93000a;
+@define-color error_fg_color #ffdad6;
+
+@define-color success_color #aacbe4;
+@define-color warning_color #aacbe4;
+@define-color link_color #84d6c2;
+
+@define-color titlebar_bg_color @headerbar_bg_color;
+@define-color titlebar_fg_color @headerbar_fg_color;
+@define-color titlebar_backdrop_color @headerbar_backdrop_color;
+
+@define-color menubar_bg_color @headerbar_bg_color;
+@define-color menubar_fg_color @headerbar_fg_color;
+
+@define-color tooltip_bg_color #252b29;
+@define-color tooltip_fg_color #dee4e0;
+
+@define-color scrollbar_bg_color #303634;
+@define-color scrollbar_slider_color #84d6c2;
+
+/* CSS custom properties for GTK4 */
+:root {
+    --accent-color: #84d6c2;
+    --accent-fg-color: #00382e;
+    --accent-bg-color: #84d6c2;
+    --window-bg-color: #090f0e;
+    --window-fg-color: #dee4e0;
+    --headerbar-bg-color: #0e1513;
+    --headerbar-fg-color: #dee4e0;
+    --popover-bg-color: #0e1513;
+    --popover-fg-color: #dee4e0;
+    --view-bg-color: #0e1513;
+    --view-fg-color: #dee4e0;
+    --card-bg-color: #0e1513;
+    --card-fg-color: #dee4e0;
+    --sidebar-bg-color: #0e1513;
+    --sidebar-fg-color: #dee4e0;
+    --selected-bg-color: #84d6c2;
+    --selected-fg-color: #00382e;
+    --button-bg-color: #0e1513;
+    --button-fg-color: #dee4e0;
+    --entry-bg-color: #0e1513;
+    --entry-fg-color: #dee4e0;
+    --error-color: #ffb4ab;
+    --success-color: #aacbe4;
+    --warning-color: #aacbe4;
+    --link-color: #84d6c2;
+    --scrollbar-bg-color: #303634;
+    --scrollbar-slider-color: #84d6c2;
+}
