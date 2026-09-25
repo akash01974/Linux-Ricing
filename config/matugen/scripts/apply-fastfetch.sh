@@ -1,10 +1,7 @@
 #!/bin/bash
 # Injects matugen colors into fastfetch config.jsonc.
-# Maps ANSI keyColor codes to matugen hex colors:
-#   31 (system) -> primary
-#   32 (software) -> secondary
-#   33 (hardware) -> tertiary
-#   34 (time) -> primary_fixed_dim
+# Config uses placeholder tags: __PRIMARY__, __SECONDARY__, __TERTIARY__, __PRIMARY_DIM__
+# which this script replaces with actual hex colors from matugen.
 
 COLOR_FILE="$HOME/.cache/matugen/fastfetch-colors.json"
 CONFIG_FILE="$HOME/.config/fastfetch/config.jsonc"
@@ -12,56 +9,28 @@ CONFIG_FILE="$HOME/.config/fastfetch/config.jsonc"
 [ ! -f "$COLOR_FILE" ] && exit 0
 [ ! -f "$CONFIG_FILE" ] && exit 0
 
-# Read colors using python for reliable JSON parsing
-python3 << PYEOF
-import json, re
+python3 << 'PYEOF'
+import json
 
-with open("$COLOR_FILE") as f:
+with open("/home/akash/.cache/matugen/fastfetch-colors.json") as f:
     c = json.load(f)
 
-with open("$CONFIG_FILE") as f:
+with open("/home/akash/.config/fastfetch/config.jsonc") as f:
     config = f.read()
 
-# Color map: ANSI code -> matugen color key
-color_map = {
-    "31": c["primary"],
-    "32": c["secondary"],
-    "33": c["tertiary"],
-    "34": c["primary_fixed_dim"],
+replacements = {
+    "__PRIMARY__": c["primary"],
+    "__SECONDARY__": c["secondary"],
+    "__TERTIARY__": c["tertiary"],
+    "__PRIMARY_DIM__": c["primary_fixed_dim"],
+    "__ON_SURFACE__": c["on_surface"],
+    "__OUTLINE__": c["outline"],
 }
 
-# Replace "keyColor": "XX" with hex colors
-for ansi, hex_color in color_map.items():
-    config = config.replace(f'"keyColor": "{ansi}"', f'"keyColor": "{hex_color}"')
+for tag, color in replacements.items():
+    config = config.replace(tag, color)
 
-# Also set/update display.color for global overrides
-display_section = f"""
-  "display": {{
-    "separator": " ➜ ",
-    "color": {{
-      "keys": "{c["primary"]}",
-      "title": "{c["tertiary"]}",
-      "output": "{c["on_surface"]}",
-      "separator": "{c["outline"]}"
-    }}
-  }},"""
-
-# If display section exists, replace it; otherwise inject after logo
-if '"display"' in config:
-    config = re.sub(
-        r'"display"\s*:\s*\{[^}]*\},',
-        display_section,
-        config,
-        count=1
-    )
-else:
-    config = config.replace(
-        '"logo"',
-        display_section + '\n  "logo"',
-        1
-    )
-
-with open("$CONFIG_FILE", "w") as f:
+with open("/home/akash/.config/fastfetch/config.jsonc", "w") as f:
     f.write(config)
 
 print("fastfetch colors applied")

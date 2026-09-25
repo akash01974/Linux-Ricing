@@ -1,7 +1,7 @@
 --[[ KEYBINDINGS ]]
 
 local terminal    = "kitty"
-local fileManager = "nautilus --new-window"
+local fileManager = "thunar"
 local menu        = "$HOME/.config/rofi/menus/launcher.sh"
 local mainMod     = "SUPER"
 
@@ -16,6 +16,7 @@ hl.bind(mainMod .. " + V", hl.dsp.window.float({ action = "toggle" }))
 hl.bind(mainMod .. " + R", hl.dsp.exec_cmd("$HOME/.config/waybar/scripts/launch.sh"))
 hl.bind(mainMod .. " + SHIFT + R", hl.dsp.exec_cmd("$HOME/.config/rofi/menus/waybar-layouts.sh"))
 hl.bind("ALT + space", hl.dsp.exec_cmd(menu))
+hl.bind(mainMod .. " + F", hl.dsp.window.fullscreen())
 hl.bind(mainMod .. " + P", hl.dsp.window.pseudo())
 hl.bind(mainMod .. " + J", hl.dsp.layout("togglesplit"))
 hl.bind(mainMod .. " + N", hl.dsp.exec_cmd("swaync-client -t -sw"))

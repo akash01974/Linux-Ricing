@@ -65,33 +65,4 @@
 @define-color scrollbar_bg_color {{colors.surface_container_highest.dark.hex}};
 @define-color scrollbar_slider_color {{colors.primary.dark.hex}};
 
-/* CSS custom properties for GTK4 */
-:root {
-    --accent-color: {{colors.primary.dark.hex}};
-    --accent-fg-color: {{colors.on_primary.dark.hex}};
-    --accent-bg-color: {{colors.primary.dark.hex}};
-    --window-bg-color: {{colors.surface_container_lowest.dark.hex}};
-    --window-fg-color: {{colors.on_surface.dark.hex}};
-    --headerbar-bg-color: {{colors.surface_dim.dark.hex}};
-    --headerbar-fg-color: {{colors.on_surface.dark.hex}};
-    --popover-bg-color: {{colors.surface_dim.dark.hex}};
-    --popover-fg-color: {{colors.on_surface.dark.hex}};
-    --view-bg-color: {{colors.surface.dark.hex}};
-    --view-fg-color: {{colors.on_surface.dark.hex}};
-    --card-bg-color: {{colors.surface.dark.hex}};
-    --card-fg-color: {{colors.on_surface.dark.hex}};
-    --sidebar-bg-color: {{colors.surface_dim.dark.hex}};
-    --sidebar-fg-color: {{colors.on_surface.dark.hex}};
-    --selected-bg-color: {{colors.primary.dark.hex}};
-    --selected-fg-color: {{colors.on_primary.dark.hex}};
-    --button-bg-color: {{colors.surface_dim.dark.hex}};
-    --button-fg-color: {{colors.on_surface.dark.hex}};
-    --entry-bg-color: {{colors.surface.dark.hex}};
-    --entry-fg-color: {{colors.on_surface.dark.hex}};
-    --error-color: {{colors.error.dark.hex}};
-    --success-color: {{colors.tertiary.dark.hex}};
-    --warning-color: {{colors.tertiary.dark.hex}};
-    --link-color: {{colors.primary.dark.hex}};
-    --scrollbar-bg-color: {{colors.surface_container_highest.dark.hex}};
-    --scrollbar-slider-color: {{colors.primary.dark.hex}};
-}
+/* GTK4 custom properties are in gtk4-colors.css (imported by gtk4 apps only) */

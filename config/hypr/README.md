@@ -66,7 +66,7 @@ All use `SUPER` (Windows key) unless noted.
 | `SUPER + T` | Open terminal (kitty) |
 | `SUPER + Q` | Close window |
 | `SUPER + M` | Exit Hyprland |
-| `SUPER + E` | File manager (nautilus) |
+| `SUPER + E` | File manager (thunar) |
 | `SUPER + V` | Toggle float |
 | `SUPER + R` | Relaunch waybar |
 | `SUPER + P` | Toggle pseudo-tiling |

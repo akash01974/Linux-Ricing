@@ -18,9 +18,12 @@ hl.on("hyprland.start", function()
     hl.exec_cmd("waybar")
     hl.exec_cmd("awww-daemon")
     hl.exec_cmd("hypridle")
-    hl.exec_cmd("nautilus --gapplication-service")
+    hl.exec_cmd("thunar --daemon")
 
     -- Power profile change notifications
     hl.exec_cmd("~/.config/hypr/scripts/power-profile-monitor.sh")
+
+    -- Battery low notifications
+    hl.exec_cmd("battery-monitor.sh")
 
 end)

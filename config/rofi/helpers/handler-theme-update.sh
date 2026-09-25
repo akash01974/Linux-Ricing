@@ -55,13 +55,13 @@ OVERALL_START=$(date +%s%N)
 
 # ─── Phase 1: Fire everything in parallel ──────────────────────────
 
-# 1a. Wallpaper transition (fire-and-forget)
-awww img "$WP" \
-    --transition-type grow \
-    --transition-duration 1.5 \
-    --transition-fps 60 \
-    --transition-bezier 0.0,0.0,1.0,1.0 &>/dev/null &
-log "awww transition started"
+# 1a. Set wallpaper directly (no transition)
+cp -f -- "$WP" "$HOME/.cache/hyprlock/current.jpg" 2>/dev/null || true
+awww kill 2>/dev/null || true
+sleep 0.3
+awww-daemon &>/dev/null &
+sleep 0.5
+log "Wallpaper set, daemon restarted"
 
 # 1b. Hyprlock wallpaper cache
 mkdir -p "$HYPRLOCK_DIR"
