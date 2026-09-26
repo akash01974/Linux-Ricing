@@ -6,6 +6,20 @@
 `scripts/env` and `scripts/env.fish` are **copied** (not symlinked).
 Before editing `~/.config/<app>/`, check `ls -la` — if it's a copy (not a symlink to the repo), editing the repo won't apply live.
 
+**On this machine, nothing is currently symlinked** — 0 of 21 `~/.config/*`
+dirs and 0 home dotfiles point here (repo 142 files vs live 1,330; 41 differ,
+1,190 live-only; `~/.config/hypr` is 23 files here vs 202 live). So:
+
+- Editing files in this repo does **not** change the running system.
+- Running `./install.sh` **`rm -rf`s the live configs** and substitutes the
+  repo versions (after backing up to `~/Backups/dotfiles-$(date)`) — 1,190
+  live-only files get swapped out.
+- `home/.zshrc:139` is the redacted `GEMINI_API_KEY` placeholder; live
+  `~/.zshrc:139` has the real key. Symlinking replaces the real key with `""`.
+
+Also note: most of `~/.config/hypr/scripts/` exists **only live** (35 scripts
+there, 7 here).
+
 ## Git-ignored files that bite back
 
 - `**/env.lua` — `config/hypr/modules/env.lua` exists on disk but is gitignored; changes won't be tracked.
